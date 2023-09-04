@@ -53,11 +53,9 @@ ordersRouter.get("/user/:id", async (req, res) => {
 // Order Check Availablity
 ordersRouter.post("/checkAvailablity", async (req, res) => {
   let payload = req.body;
-  // console.log(payload)
   let classID = payload.classID;
   try {
     let classes = await ClassesModel.findById(classID);
-    // console.log(classes,classID)
     if (classes.clients.includes(payload.userID)) {
       res
         .status(401)

@@ -59,7 +59,7 @@ userRouter.get("/:id", async (req, res) => {
 
 // ....User Registration part start.... //
 userRouter.post("/register", async (req, res) => {
-  let { name, email, password, phone, sex, country, role } = req.body;
+  let { name, email, password, phone, sex, role } = req.body;
 
   try {
     let user = await UserModel.find({ email });
@@ -82,7 +82,6 @@ userRouter.post("/register", async (req, res) => {
             password: hash,
             phone,
             sex,
-            country,
             role,
             createdDate,
             createdTime,

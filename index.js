@@ -23,7 +23,6 @@ app.use("/user", userRouter);
 app.use("/class", classesRouter);
 app.use("/order", ordersRouter);
 app.use("/admin", dashboardRouter);
-
 app.get("/alltrainer", async (req, res) => {
   try {
     let trainers = await UserModel.find({ role: "trainer" });
