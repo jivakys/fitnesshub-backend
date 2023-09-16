@@ -66,7 +66,7 @@ userRouter.post("/register", async (req, res) => {
     if (user.length > 0) {
       res.status(400).send({ error: "User already registered in Database" });
     } else {
-      console.log("check");
+      // console.log("check");
       bcrypt.hash(password, +process.env.SALT, async function (err, hash) {
         if (err) {
           res
