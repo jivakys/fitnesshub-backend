@@ -42,7 +42,7 @@ userRouter.get("/singletrainer/:id", async (req, res) => {
   }
 });
 
-// User - Single User Detail
+// User - Single User Details
 userRouter.get("/:id", async (req, res) => {
   let userID = req.params.id;
   try {
