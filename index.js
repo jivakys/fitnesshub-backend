@@ -97,4 +97,7 @@ app.listen(process.env.PORT, async () => {
   console.log(`Listening on port ${process.env.PORT}`);
 });
 
+// pass = DkMoDaHYtPfsvTN8ugQvxSGUaSSemxxl
+// DkMoDaHYtPfsvTN8ugQvxSGUaSSemxxl;
+// endpoint = redis-12692.c264.ap-south-1-1.ec2.cloud.redislabs.com:12692
 //..........server part end here.............//
