@@ -95,5 +95,4 @@ app.listen(process.env.PORT, async () => {
   }
   console.log(`Listening on port ${process.env.PORT}`);
 });
-
 //..........server part end here.............//

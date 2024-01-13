@@ -89,7 +89,7 @@ ordersRouter.post("/create", async (req, res) => {
     await ClassesModel.findByIdAndUpdate(classID, {
       seatOccupied: classes.seatOccupied + 1,
       clients: [...classes.clients, payload.userID],
-    }); // increment seats occupied
+    });
     let user = await UserModel.findById(payload.userID);
     let trainer = await UserModel.findById(classes.trainerID);
     await UserModel.findByIdAndUpdate(payload.userID, {
