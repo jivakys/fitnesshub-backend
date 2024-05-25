@@ -5,11 +5,12 @@ const { classesRouter } = require("./routes/classesRouter");
 const { ordersRouter } = require("./routes/ordersRouter");
 const { dashboardRouter } = require("./routes/adminRouter");
 const { UserModel } = require("./models/userModel");
-const app = express();
 const cors = require("cors");
 require("dotenv").config();
+const app = express();
+app.use(cors());
 app.use(express.json());
-app.use(cors({ origin: "https://fitnesshub-ivory.vercel.app" }));
+app.use(cors({ origin: "*" }));
 
 const { passport } = require("./google.outh");
 
@@ -22,6 +23,7 @@ app.use("/user", userRouter);
 app.use("/class", classesRouter);
 app.use("/order", ordersRouter);
 app.use("/admin", dashboardRouter);
+
 app.get("/alltrainer", async (req, res) => {
   try {
     let trainers = await UserModel.find({ role: "trainer" });
@@ -70,7 +72,7 @@ const options = {
       },
       contact: {
         name: "Fitness-Hub",
-        url: "https://64ec32328c80145abe2c0486--tubular-unicorn-50d6e4.netlify.app/",
+        url: "https://fitnesshub-ivory.vercel.app/",
         email: "Fitnesshub@gmail.com",
       },
     },
@@ -95,4 +97,5 @@ app.listen(process.env.PORT, async () => {
   }
   console.log(`Listening on port ${process.env.PORT}`);
 });
+
 //..........server part end here.............//

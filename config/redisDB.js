@@ -10,7 +10,6 @@ const client = redis.createClient({
 });
 
 client.connect();
-
 client.on("error", (error) => {
   console.log(error.message);
 });
