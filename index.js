@@ -10,8 +10,14 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(cors({ origin: "*" }));
-
+app.use(
+  cors({
+    origin: "https://fitnesshub-project.vercel.app",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    allowedHeaders: "Content-Type",
+  })
+);
 const { passport } = require("./google.outh");
 
 //...... api point (routes) start here..........//
