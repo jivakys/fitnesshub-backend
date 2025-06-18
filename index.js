@@ -20,7 +20,6 @@ app.use(
 );
 const { passport } = require("./google.outh");
 
-//...... api point (routes) start here..........//
 app.get("/", (req, res) => {
   res.send("Base Endpoint Of API");
 });
